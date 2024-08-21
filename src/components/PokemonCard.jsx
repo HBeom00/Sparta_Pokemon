@@ -5,8 +5,8 @@ const PokemonCard = ({ id, img, name, type, onClickAddBtn }) => {
     <CardDiv>
       <img src={img} alt="pokemon_img" />
       <CardP>{name}</CardP>
-      <CardP>{type.length > 1 ? `${type[0]}, ${type[1]}` : type[0]}</CardP>
-      <CardButton onClick={onClickAddBtn(id)}>추가</CardButton>
+      <CardP>{type.join(", ")}</CardP>
+      <CardButton onClick={() => onClickAddBtn(id)}>추가</CardButton>
     </CardDiv>
   );
 };
@@ -36,7 +36,8 @@ const CardButton = styled.button`
   border-radius: 4px;
   width: 80px;
   height: 24px;
-  & {
+  &:hover {
     cursor: pointer;
+    color: yellow;
   }
 `;
