@@ -20,12 +20,6 @@ const Dashboard = ({ select, onClickDeleteBtn }) => {
                 onClickBtn={onClickDeleteBtn}
                 isSelected={false}
               />
-              // <div key={el.id}>
-              //   <img src={el.img_url} alt="pokemon_img" />
-              //   <p>{el.korean_name}</p>
-              //   <p>{el.types.join(", ")}</p>
-              //   <button onClick={() => onClickDeleteBtn(el.id)}>삭제</button>
-              // </div>
             );
           })
         )}

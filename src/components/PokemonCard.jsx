@@ -9,7 +9,7 @@ const PokemonCard = ({ id, img, name, type, onClickBtn, isSelected }) => {
       <img src={img} alt={name} />
       <CardP>{name}</CardP>
       <CardP>{type.join(", ")}</CardP>
-      <CardButton onClick={() => onClickBtn(id)}>
+      <CardButton onClick={(e) => onClickBtn({ e, id })}>
         {isSelected ? "추가" : "삭제"}
       </CardButton>
     </CardDiv>
@@ -27,12 +27,8 @@ const CardDiv = styled.div`
   width: calc(16.77% - 18px);
   height: 220px;
   border-radius: 16px;
-  & {
-    transition: transform 0.2s ease-in-out;
-  }
   &:hover {
     cursor: pointer;
-    transform: translateY(-10px);
   }
 `;
 
@@ -46,8 +42,8 @@ const CardButton = styled.button`
   border: 1px solid red;
   color: white;
   border-radius: 4px;
-  width: 80px;
-  height: 24px;
+  width: 90px;
+  height: 30px;
   &:hover {
     cursor: pointer;
     color: yellow;

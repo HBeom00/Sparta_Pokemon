@@ -7,7 +7,8 @@ import styled from "styled-components";
 const Dex = () => {
   const [select, setSelect] = useState([]);
 
-  const onClickAddBtn = (id) => {
+  const onClickAddBtn = ({ e, id }) => {
+    e.stopPropagation();
     if (select.length >= 6) return alert("최대 6개까지 추가 할 수 있습니다.");
     if (select.find((el) => el.id === id))
       return alert("동일한 포켓몬이 존재합니다.");
@@ -15,7 +16,8 @@ const Dex = () => {
     setSelect([...select, selectedPokemon]);
   };
 
-  const onClickDeleteBtn = (id) => {
+  const onClickDeleteBtn = ({ e, id }) => {
+    e.stopPropagation();
     const deletePokemon = select.filter((el) => el.id !== id);
     setSelect(deletePokemon);
   };
