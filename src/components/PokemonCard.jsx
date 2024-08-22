@@ -1,9 +1,12 @@
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const PokemonCard = ({ id, img, name, type, onClickBtn, isSelected }) => {
+  const navigate = useNavigate();
+
   return (
-    <CardDiv>
-      <img src={img} alt="pokemon_img" />
+    <CardDiv onClick={() => navigate(`/detail?id=${id}`)}>
+      <img src={img} alt={name} />
       <CardP>{name}</CardP>
       <CardP>{type.join(", ")}</CardP>
       <CardButton onClick={() => onClickBtn(id)}>
@@ -24,6 +27,13 @@ const CardDiv = styled.div`
   width: calc(16.77% - 18px);
   height: 220px;
   border-radius: 16px;
+  & {
+    transition: transform 0.2s ease-in-out;
+  }
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+  }
 `;
 
 const CardP = styled.p`

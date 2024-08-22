@@ -23,7 +23,7 @@ const Dex = () => {
   return (
     <StyledDiv>
       <Dashboard select={select} onClickDeleteBtn={onClickDeleteBtn} />
-      <PokemonList onClickAddBtn={onClickAddBtn} />
+      <PokemonList onClickAddBtn={onClickAddBtn} MOCK_DATA={MOCK_DATA} />
     </StyledDiv>
   );
 };

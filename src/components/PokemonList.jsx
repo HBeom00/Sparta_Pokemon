@@ -1,8 +1,7 @@
-import MOCK_DATA from "../mock";
 import PokemonCard from "./PokemonCard";
 import { styled } from "styled-components";
 
-const PokemonList = ({ onClickAddBtn }) => {
+const PokemonList = ({ onClickAddBtn, MOCK_DATA }) => {
   return (
     <Wrapper>
       <Container>
