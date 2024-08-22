@@ -14,7 +14,8 @@ const PokemonList = ({ onClickAddBtn }) => {
               img={el.img_url}
               name={el.korean_name}
               type={el.types}
-              onClickAddBtn={onClickAddBtn}
+              onClickBtn={onClickAddBtn}
+              isSelected={true}
             />
           );
         })}
@@ -32,7 +33,7 @@ const Container = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background-color: cadetblue;
+  background-color: lightcyan;
   border-radius: 16px;
   display: flex;
   flex-wrap: wrap;

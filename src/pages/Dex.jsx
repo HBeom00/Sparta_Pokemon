@@ -2,6 +2,7 @@ import { useState } from "react";
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 import MOCK_DATA from "../mock";
+import styled from "styled-components";
 
 const Dex = () => {
   const [select, setSelect] = useState([]);
@@ -14,12 +15,21 @@ const Dex = () => {
     setSelect([...select, selectedPokemon]);
   };
 
+  const onClickDeleteBtn = (id) => {
+    const deletePokemon = select.filter((el) => el.id !== id);
+    setSelect(deletePokemon);
+  };
+
   return (
-    <div>
-      <Dashboard select={select} />
+    <StyledDiv>
+      <Dashboard select={select} onClickDeleteBtn={onClickDeleteBtn} />
       <PokemonList onClickAddBtn={onClickAddBtn} />
-    </div>
+    </StyledDiv>
   );
 };
 
 export default Dex;
+
+const StyledDiv = styled.div`
+  background-color: cadetblue;
+`;
