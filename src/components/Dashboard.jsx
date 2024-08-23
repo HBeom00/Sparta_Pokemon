@@ -1,28 +1,39 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import pokeBall from "../assets/pokeball.png";
 
 const Dashboard = ({ select, onClickDeleteBtn }) => {
+  const tempArr = [];
+  let count = 6 - select.length;
+
+  for (let i = 0; i < count; i++) {
+    tempArr.push(pokeBall);
+  }
+
   return (
     <Wrapper>
       <StyledP>최애 포켓몬 PICK!</StyledP>
       <Container>
-        {select.length === 0 ? (
-          <StyledTitle>포켓몬을 추가해 주세요</StyledTitle>
-        ) : (
-          select.map((el) => {
-            return (
-              <PokemonCard
-                key={el.id}
-                id={el.id}
-                img={el.img_url}
-                name={el.korean_name}
-                type={el.types}
-                onClickBtn={onClickDeleteBtn}
-                isSelected={false}
-              />
-            );
-          })
-        )}
+        {select.map((el) => {
+          return (
+            <PokemonCard
+              key={el.id}
+              id={el.id}
+              img={el.img_url}
+              name={el.korean_name}
+              type={el.types}
+              onClickBtn={onClickDeleteBtn}
+              isSelected={false}
+            />
+          );
+        })}
+        {tempArr.map((el, index) => {
+          return (
+            <PokeBallDiv key={index}>
+              <PokeBallImg src={el} alt="pokeball" />
+            </PokeBallDiv>
+          );
+        })}
       </Container>
     </Wrapper>
   );
@@ -36,7 +47,6 @@ const Wrapper = styled.div`
 
 const StyledP = styled.p`
   text-align: center;
-  text-align: center;
   font-size: 28px;
   font-weight: 900;
   padding: 32px 0;
@@ -44,8 +54,9 @@ const StyledP = styled.p`
 
 const Container = styled.div`
   width: 80%;
-  margin: 0 auto;
+  height: 220px;
   padding: 20px;
+  margin: 0 auto;
   background-color: lightcyan;
   border-radius: 16px;
   display: flex;
@@ -53,15 +64,17 @@ const Container = styled.div`
   gap: 18px;
 `;
 
-const StyledTitle = styled.div`
+const PokeBallDiv = styled.div`
+  width: 158px;
+  padding: 12px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: powderblue;
-  width: 100%;
-  height: 220px;
-  border-radius: 16px;
-  color: red;
-  font-weight: 900;
-  font-size: 24px;
+  align-items: center;
+  border: 2px dashed black;
+  border-radius: 12px;
+`;
+
+const PokeBallImg = styled.img`
+  width: 70px;
+  height: 70px;
 `;
