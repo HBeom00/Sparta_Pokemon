@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBall from "../assets/pokeball.png";
+import { useContext } from "react";
+import { PokemonContext } from "../context/store";
 
-const Dashboard = ({ select, onClickDeleteBtn }) => {
+const Dashboard = () => {
+  const { select, onClickDeleteBtn } = useContext(PokemonContext);
   const tempArr = [];
   let count = 6 - select.length;
 

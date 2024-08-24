@@ -1,19 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Dex from "./pages/Dex";
-import NotFoundPage from "./NotFoundPage";
-import PokemonDetail from "./pages/PokemonDetail";
+import PokemonProvider from "./context/store";
+import Router from "./route/Router";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<NotFoundPage />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/dex" element={<Dex />} />
-        <Route path="/detail" element={<PokemonDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <PokemonProvider>
+      <Router />
+    </PokemonProvider>
   );
 };
 

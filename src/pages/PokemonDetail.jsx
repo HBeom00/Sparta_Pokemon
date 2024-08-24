@@ -1,12 +1,14 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import MOCK_DATA from "../mock";
 import styled from "styled-components";
+import { PokemonContext } from "../context/store";
+import { useContext } from "react";
 
 const PokemonDetail = () => {
-  const [param] = useSearchParams();
   const navigate = useNavigate();
-  let paramId = parseInt(param.get("id"));
-  const selectPokemon = MOCK_DATA.find((el) => el.id === paramId);
+  const { pokemonData } = useContext(PokemonContext);
+  const [param] = useSearchParams();
+  const paramId = parseInt(param.get("id"));
+  const selectPokemon = pokemonData.find((el) => el.id === paramId);
   if (!selectPokemon) {
     return <div>포켓몬을 찾을 수 없습니다.</div>;
   }

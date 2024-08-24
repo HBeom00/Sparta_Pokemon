@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <StyledDiv>
-      <StyledImg src={pokemonBackground} alt="backgroung-img" />
+      <StyledImg src={pokemonBackground} alt="background-img" />
       <StyledButton
         onClick={() => {
           navigate("/dex");
@@ -18,7 +18,6 @@ const Home = () => {
     </StyledDiv>
   );
 };
-
 export default Home;
 
 const StyledDiv = styled.div`

@@ -1,11 +1,14 @@
+import { useContext } from "react";
+import { PokemonContext } from "../context/store";
 import PokemonCard from "./PokemonCard";
 import { styled } from "styled-components";
 
-const PokemonList = ({ onClickAddBtn, MOCK_DATA }) => {
+const PokemonList = () => {
+  const { pokemonData, onClickAddBtn } = useContext(PokemonContext);
   return (
     <Wrapper>
       <Container>
-        {MOCK_DATA.map((el) => {
+        {pokemonData.map((el) => {
           return (
             <PokemonCard
               key={el.id}
