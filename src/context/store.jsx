@@ -6,7 +6,6 @@ export const PokemonContext = createContext();
 
 // 2. 저장된 데이터를 원하는 컴포넌트(자식 컴포넌트)에게 보내줄 수 있는 Provider 반환
 const PokemonProvider = ({ children }) => {
-  const [pokemonData] = useState(MOCK_DATA);
   const [select, setSelect] = useState([]);
 
   // 포켓몬 추가 버튼
@@ -15,7 +14,7 @@ const PokemonProvider = ({ children }) => {
     if (select.length >= 6) return alert("최대 6개까지 추가 할 수 있습니다.");
     if (select.find((el) => el.id === id))
       return alert("동일한 포켓몬이 존재합니다.");
-    const selectedPokemon = pokemonData.find((el) => el.id === id);
+    const selectedPokemon = MOCK_DATA.find((el) => el.id === id);
     setSelect([...select, selectedPokemon]);
   };
 
@@ -29,7 +28,6 @@ const PokemonProvider = ({ children }) => {
   return (
     <PokemonContext.Provider
       value={{
-        pokemonData,
         select,
         onClickAddBtn,
         onClickDeleteBtn,
