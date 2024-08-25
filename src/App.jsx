@@ -1,11 +1,12 @@
-import PokemonProvider from "./context/store";
 import Router from "./route/Router";
+import { Provider } from "react-redux";
+import store from "./rtk/store/store";
 
 const App = () => {
   return (
-    <PokemonProvider>
+    <Provider store={store}>
       <Router />
-    </PokemonProvider>
+    </Provider>
   );
 };
 

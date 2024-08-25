@@ -1,11 +1,15 @@
-import { useContext } from "react";
-import { PokemonContext } from "../context/store";
 import PokemonCard from "./PokemonCard";
 import { styled } from "styled-components";
 import MOCK_DATA from "../mock";
+import { useDispatch } from "react-redux";
+import { addPokemon } from "../rtk/slices/PokemonSlice";
 
 const PokemonList = () => {
-  const { onClickAddBtn } = useContext(PokemonContext);
+  const dispatch = useDispatch();
+  const onClickAddBtn = (id) => {
+    dispatch(addPokemon(id));
+  };
+
   return (
     <Wrapper>
       <Container>

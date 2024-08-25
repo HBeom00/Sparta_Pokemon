@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBall from "../assets/pokeball.png";
-import { useContext } from "react";
-import { PokemonContext } from "../context/store";
+import { useDispatch, useSelector } from "react-redux";
+import { deletePokemon } from "../rtk/slices/PokemonSlice";
 
 const Dashboard = () => {
-  const { select, onClickDeleteBtn } = useContext(PokemonContext);
+  const dispatch = useDispatch();
+  const select = useSelector((state) => state.selectPokemon.select);
   const tempArr = [];
+  const onClickDeleteBtn = (id) => {
+    dispatch(deletePokemon(id));
+  };
   let count = 6 - select.length;
 
   for (let i = 0; i < count; i++) {

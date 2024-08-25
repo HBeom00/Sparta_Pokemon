@@ -9,7 +9,12 @@ const PokemonCard = ({ id, img, name, type, onClickBtn, isSelected }) => {
       <img src={img} alt={name} />
       <CardP>{name}</CardP>
       <CardP>{type.join(", ")}</CardP>
-      <CardButton onClick={(e) => onClickBtn({ e, id })}>
+      <CardButton
+        onClick={(e) => {
+          e.stopPropagation();
+          onClickBtn(id);
+        }}
+      >
         {isSelected ? "추가" : "삭제"}
       </CardButton>
     </CardDiv>
