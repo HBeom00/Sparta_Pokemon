@@ -2,7 +2,7 @@ import PokemonCard from "./PokemonCard";
 import { styled } from "styled-components";
 import MOCK_DATA from "../mock";
 import { useDispatch } from "react-redux";
-import { addPokemon } from "../rtk/slices/PokemonSlice";
+import { addPokemon } from "../rtk/slices/pokemonSlice";
 
 const PokemonList = () => {
   const dispatch = useDispatch();

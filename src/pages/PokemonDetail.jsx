@@ -1,7 +1,7 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import MOCK_DATA from "../mock";
-import { addPokemon } from "../rtk/slices/PokemonSlice";
+import { addPokemon } from "../rtk/slices/pokemonSlice";
 import { useDispatch } from "react-redux";
 
 const PokemonDetail = () => {

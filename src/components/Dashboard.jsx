@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBall from "../assets/pokeball.png";
 import { useDispatch, useSelector } from "react-redux";
-import { deletePokemon } from "../rtk/slices/PokemonSlice";
+import { deletePokemon } from "../rtk/slices/pokemonSlice";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
