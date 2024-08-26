@@ -11,6 +11,7 @@ const Dashboard = () => {
   const onClickDeleteBtn = (id) => {
     dispatch(deletePokemon(id));
   };
+  console.log(select, "확인");
   let count = 6 - select.length;
 
   for (let i = 0; i < count; i++) {
