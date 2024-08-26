@@ -2,7 +2,7 @@
     <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&height=180&text=Pokemon_dex<br/>&animation=&fontColor=000000&fontSize=70" />
     </div>
     <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔗 배포 링크 </h2><a>https://hbeom00.github.io/Sparta_Pokemon/</a> <br>
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔗 배포 링크 </h2>https://sparta-pokemon-eight.vercel.app/ <br>
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> ⏳ 작업 기간 </h2>24.08.19 ~ 27.08.27 <br>
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ 기술 스택 </h2> <br> 
     <div style="margin: ; text-align: left;" "text-align: left;"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
