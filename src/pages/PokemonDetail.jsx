@@ -1,15 +1,22 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import MOCK_DATA from "../mock";
+import { addPokemon } from "../rtk/slices/PokemonSlice";
+import { useDispatch } from "react-redux";
 
 const PokemonDetail = () => {
   const navigate = useNavigate();
   const [param] = useSearchParams();
+  const dispatch = useDispatch();
   const paramId = parseInt(param.get("id"));
   const selectPokemon = MOCK_DATA.find((el) => el.id === paramId);
   if (!selectPokemon) {
     return <div>포켓몬을 찾을 수 없습니다.</div>;
   }
+
+  const onClickAddBtn = (paramId) => {
+    dispatch(addPokemon(paramId));
+  };
 
   return (
     <Wrapper>
@@ -18,7 +25,10 @@ const PokemonDetail = () => {
         <Content>{selectPokemon.korean_name}</Content>
         <Content>{selectPokemon.types.join(", ")}</Content>
         <Content>{selectPokemon.description}</Content>
-        <Button onClick={() => navigate("/dex")}>돌아가기</Button>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <Button onClick={() => navigate("/dex")}>돌아가기</Button>
+          <Button onClick={() => onClickAddBtn(paramId)}>추가</Button>
+        </div>
       </Container>
     </Wrapper>
   );
