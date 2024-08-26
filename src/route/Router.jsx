@@ -6,8 +6,7 @@ import PokemonDetail from "../pages/PokemonDetail";
 
 const Router = () => {
   return (
-    // eslint-disable-next-line no-undef
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Routes>
         <Route path="/*" element={<NotFoundPage />} />
         <Route path="/" element={<Home />} />
