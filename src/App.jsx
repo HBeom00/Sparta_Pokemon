@@ -1,14 +1,20 @@
 import Router from "./route/Router";
 import { Provider } from "react-redux";
 import store from "./rtk/store/store";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "sonner";
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router />
-      <ToastContainer position="bottom-right" autoClose={1000} />
+      <Toaster
+        richColors
+        toastOptions={{
+          style: { padding: "20px" },
+        }}
+      />
     </Provider>
   );
 };
