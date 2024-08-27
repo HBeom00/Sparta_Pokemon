@@ -57,7 +57,7 @@ Pokemon MOCK_DATA를 활용하여 상세정보를 보여주는 도감 사이트 
 ![스크린샷 2024-08-27 112337](https://github.com/user-attachments/assets/6bf7032c-530e-4a24-a0f8-2d68b75e96b9)
 - **RTK**로 **Dashboard**에 추가되는 포켓몬 전역으로 상태 관리
 - **queryString**으로 포켓몬 ID를 받아 해당 포켓몬의 상세 정보를 보여주는 **Detail Page**로 이동
-- **UI 라이브러리(react-toastify)** 활용하여 포켓몬 추가, 삭제 버튼 클릭 시 왼쪽 하단에 **toast창** 표시
+- **UI 라이브러리(react-toastify)** 활용하여 포켓몬 추가, 삭제 버튼 클릭 시 왼쪽 하단에 **toast창** 표시 ( use sonner, toastify )
 ## 3. Detail Page
 ![스크린샷 2024-08-27 105459](https://github.com/user-attachments/assets/2fb4dbfd-6f71-4ca6-91e6-e68a46cc1d4c)
 - 돌아가기 버튼 ➡️ Dex Page로 이동 ( 기존 Dashboard에 추가된 포켓몬 유지 )
