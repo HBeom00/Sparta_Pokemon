@@ -1,8 +1,6 @@
 import Router from "./route/Router";
 import { Provider } from "react-redux";
 import store from "./rtk/store/store";
-// import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 import { Toaster } from "sonner";
 
 const App = () => {
